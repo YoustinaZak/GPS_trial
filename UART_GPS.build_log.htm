@@ -4,7 +4,7 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 E:\Tiva_c\UART_GPS - Copy\UART_GPS.uvproj
-Project File Date:  04/22/2024
+Project File Date:  04/25/2024
 
 <h2>Output:</h2>
 Rebuild target 'Target 1'
@@ -22,8 +22,6 @@ UART.h(82): warning:  #1295-D: Deprecated declaration UART2_Init - give arg type
   void UART2_Init();
 UART.h(83): warning:  #1295-D: Deprecated declaration UART5_INIT - give arg types
   void UART5_INIT();
-UART.h(84): warning:  #1295-D: Deprecated declaration GetChar_PC - give arg types
-  char GetChar_PC();
 UART.h(85): warning:  #1295-D: Deprecated declaration readChar - give arg types
   char readChar();
 UART.h(86): warning:  #1295-D: Deprecated declaration printChar - give arg types
@@ -34,26 +32,28 @@ UART.h(90): warning:  #1-D: last line of file ends without a newline
   #endif 
 GPIO.h(73): warning:  #1-D: last line of file ends without a newline
   #endif
-GPS.h(7): warning:  #1295-D: Deprecated declaration Check_GGA - give arg types
+GPS.h(13): warning:  #1295-D: Deprecated declaration Check_GGA - give arg types
   uint8_t Check_GGA();
-GPS.h(8): warning:  #1295-D: Deprecated declaration Get_String - give arg types
+GPS.h(14): warning:  #1295-D: Deprecated declaration Get_String - give arg types
   void Get_String();
-GPS.h(10): warning:  #1295-D: Deprecated declaration Check_fix - give arg types
+GPS.h(16): warning:  #1295-D: Deprecated declaration Check_fix - give arg types
   uint8_t Check_fix();
-GPS.h(13): warning:  #1-D: last line of file ends without a newline
-  double Get_Path_Coordinates(uint8_t *input, uint8_t axis ,uint8_t hold_array[MAX_FIELDS][MAX_FIELD_LENGTH] );
-main.c(36): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *"
-                 Get_Data(input); //append string
-main.c(22): warning:  #177-D: variable "old_array" was declared but never referenced
-                        uint8_t old_array[MAX_FIELDS][MAX_FIELD_LENGTH];
-main.c(92): warning:  #111-D: statement is unreachable
+GPS.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(82): warning:  #9-D: nested comment is not allowed
+                                                /*GetChar_PC(Valid_Coordinates[i][0]);
+main.c(100): warning:  #111-D: statement is unreachable
         return 0;
-main.c(93): warning:  #1-D: last line of file ends without a newline
+main.c(101): warning:  #1-D: last line of file ends without a newline
   }
-main.c(8): warning:  #177-D: variable "i" was declared but never referenced
-         uint8_t i=0;
-main.c(10): warning:  #177-D: variable "Valid_Coordinates" was declared but never referenced
-         double Valid_Coordinates[NO_OF_COORDINATES][2];
+main.c(10): warning:  #177-D: variable "i" was declared but never referenced
+          uint8_t i;
+main.c(11): warning:  #177-D: variable "k" was declared but never referenced
+                uint8_t k;
+main.c(14): warning:  #177-D: variable "E" was declared but never referenced
+                char E[]="1131.000";
+main.c(16): warning:  #177-D: variable "latitude" was declared but never referenced
+        double latitude;
 main.c: 22 warnings, 0 errors
 compiling UART.c...
 GPIO.h(71): warning:  #1295-D: Deprecated declaration PORTF_INIT - give arg types
@@ -68,8 +68,6 @@ UART.h(82): warning:  #1295-D: Deprecated declaration UART2_Init - give arg type
   void UART2_Init();
 UART.h(83): warning:  #1295-D: Deprecated declaration UART5_INIT - give arg types
   void UART5_INIT();
-UART.h(84): warning:  #1295-D: Deprecated declaration GetChar_PC - give arg types
-  char GetChar_PC();
 UART.h(85): warning:  #1295-D: Deprecated declaration readChar - give arg types
   char readChar();
 UART.h(86): warning:  #1295-D: Deprecated declaration printChar - give arg types
@@ -80,7 +78,7 @@ UART.h(90): warning:  #1-D: last line of file ends without a newline
   #endif 
 UART.c(113): warning:  #1-D: last line of file ends without a newline
   }
-UART.c: 12 warnings, 0 errors
+UART.c: 11 warnings, 0 errors
 compiling GPIO.c...
 GPIO.h(71): warning:  #1295-D: Deprecated declaration PORTF_INIT - give arg types
   void PORTF_INIT();
@@ -96,8 +94,6 @@ UART.H(82): warning:  #1295-D: Deprecated declaration UART2_Init - give arg type
   void UART2_Init();
 UART.H(83): warning:  #1295-D: Deprecated declaration UART5_INIT - give arg types
   void UART5_INIT();
-UART.H(84): warning:  #1295-D: Deprecated declaration GetChar_PC - give arg types
-  char GetChar_PC();
 UART.H(85): warning:  #1295-D: Deprecated declaration readChar - give arg types
   char readChar();
 UART.H(86): warning:  #1295-D: Deprecated declaration printChar - give arg types
@@ -106,26 +102,17 @@ UART.H(87): warning:  #1295-D: Deprecated declaration transChar - give arg types
   void transChar();
 UART.H(90): warning:  #1-D: last line of file ends without a newline
   #endif 
-GPIO.c: 12 warnings, 0 errors
+GPIO.c: 11 warnings, 0 errors
 compiling LED.c...
-GPS.h(7): warning:  #1295-D: Deprecated declaration Check_GGA - give arg types
-  uint8_t Check_GGA();
-GPS.h(8): warning:  #1295-D: Deprecated declaration Get_String - give arg types
-  void Get_String();
-GPS.h(10): warning:  #1295-D: Deprecated declaration Check_fix - give arg types
-  uint8_t Check_fix();
-GPS.h(13): warning:  #1-D: last line of file ends without a newline
-  double Get_Path_Coordinates(uint8_t *input, uint8_t axis ,uint8_t hold_array[MAX_FIELDS][MAX_FIELD_LENGTH] );
-LED.c: 4 warnings, 0 errors
 compiling GPS.c...
-GPS.h(7): warning:  #1295-D: Deprecated declaration Check_GGA - give arg types
+GPS.h(13): warning:  #1295-D: Deprecated declaration Check_GGA - give arg types
   uint8_t Check_GGA();
-GPS.h(8): warning:  #1295-D: Deprecated declaration Get_String - give arg types
+GPS.h(14): warning:  #1295-D: Deprecated declaration Get_String - give arg types
   void Get_String();
-GPS.h(10): warning:  #1295-D: Deprecated declaration Check_fix - give arg types
+GPS.h(16): warning:  #1295-D: Deprecated declaration Check_fix - give arg types
   uint8_t Check_fix();
-GPS.h(13): warning:  #1-D: last line of file ends without a newline
-  double Get_Path_Coordinates(uint8_t *input, uint8_t axis ,uint8_t hold_array[MAX_FIELDS][MAX_FIELD_LENGTH] );
+GPS.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
 GPIO.h(71): warning:  #1295-D: Deprecated declaration PORTF_INIT - give arg types
   void PORTF_INIT();
 GPIO.h(73): warning:  #1-D: last line of file ends without a newline
@@ -140,8 +127,6 @@ UART.h(82): warning:  #1295-D: Deprecated declaration UART2_Init - give arg type
   void UART2_Init();
 UART.h(83): warning:  #1295-D: Deprecated declaration UART5_INIT - give arg types
   void UART5_INIT();
-UART.h(84): warning:  #1295-D: Deprecated declaration GetChar_PC - give arg types
-  char GetChar_PC();
 UART.h(85): warning:  #1295-D: Deprecated declaration readChar - give arg types
   char readChar();
 UART.h(86): warning:  #1295-D: Deprecated declaration printChar - give arg types
@@ -150,23 +135,15 @@ UART.h(87): warning:  #1295-D: Deprecated declaration transChar - give arg types
   void transChar();
 UART.h(90): warning:  #1-D: last line of file ends without a newline
   #endif 
-GPS.c(82): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
+GPS.c(84): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *restrict"
       token = strtok(input, ",");
-GPS.c(82): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
-      token = strtok(input, ",");
-GPS.c(76): warning:  #550-D: variable "token" was set but never used
-                uint8_t *token;
-GPS.c(78): warning:  #177-D: variable "fieldCount" was declared but never referenced
-                int fieldCount = 0;
-GPS.c(115): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
-      latitude = strtod(hold_array[2], NULL);
-GPS.c(122): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *restrict"
-       longitude = strtod(hold_array[4], NULL);
-GPS.c(136): warning:  #940-D: missing return statement at end of non-void function "Get_Path_Coordinates"
-  }
-GPS.c(137): warning:  #1-D: last line of file ends without a newline
+GPS.c(80): warning:  #177-D: variable "lat" was declared but never referenced
+                float lat;
+GPS.c(82): warning:  #550-D: variable "fnm" was set but never used
+                float fnm ; 
+GPS.c(151): warning:  #1-D: last line of file ends without a newline
         
-GPS.c: 24 warnings, 0 errors
+GPS.c: 19 warnings, 0 errors
 compiling EEPROM.c...
 EEPROM.h(20): warning:  #1-D: last line of file ends without a newline
         
@@ -176,34 +153,61 @@ EEPROM.c(14): warning:  #1-D: last line of file ends without a newline
     }
 EEPROM.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=4728 RO-data=716 RW-data=4 ZI-data=516  
-".\UART_GPS.axf" - 0 Error(s), 77 Warning(s).
+Program Size: Code=3924 RO-data=784 RW-data=12 ZI-data=596  
+".\UART_GPS.axf" - 0 Error(s), 66 Warning(s).
 Load "E:\\Tiva_c\\UART_GPS - Copy\\UART_GPS.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
-ta=652 RW-data=4 ZI-data=516  
-".\UART_GPS.axf" - 0 Error(s), 80 Warning(s).
+</pre>
+</body>
+</html>
+ 3 warnings, 0 errors
+".\UART_GPS.axf" - 2 Error(s), 67 Warning(s).
+Target not created
+TH.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+EEPROM.c(14): warning:  #1-D: last line of file ends without a newline
+    }
+EEPROM.c: 3 warnings, 0 errors
+linking...
+.\UART_GPS.axf: Error: L6200E: Symbol Coordinates multiply defined (by led.o and main.o).
+.\UART_GPS.axf: Error: L6200E: Symbol Coordinates multiply defined (by gps.o and main.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 2 error messages.
+".\UART_GPS.axf" - 2 Error(s), 69 Warning(s).
+Target not created
+E:\Tiva_c\UART_GPS - Copy\UART_GPS.axf'
+T_GPS.axf" - 0 Error(s), 72 Warning(s).
 Load "E:\\Tiva_c\\UART_GPS - Copy\\UART_GPS.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
-, Speed=1000000Hz
+
 Erase Done.
 Programming Done.
 Verify OK.
+c: 3 warnings, 0 errors
+".\UART_GPS.axf" - 2 Error(s), 72 Warning(s).
+Target not created
+OM.c(14): warning:  #1-D: last line of file ends without a newline
+    }
+EEPROM.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=3700 RO-data=796 RW-data=4 ZI-data=516  
+".\UART_GPS.axf" - 0 Error(s), 75 Warning(s).
 Load "E:\\Tiva_c\\UART_GPS - Copy\\UART_GPS.axf" 
 Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
-ay[5] == 'W'){longitude = -longitude;}
-GPS.c(150): warning:  #940-D: missing return statement at end of non-void function "get_coordinates"
-  }
-GPS.c(151): warning:  #1-D: last line of file ends without a newline
-        
-GPS.c: 24 warnings, 8 errors
-".\UART_GPS.axf" - 10 Error(s), 72 Warning(s).
+necting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+rs
+".\UART_GPS.axf" - 2 Error(s), 74 Warning(s).
 Target not created

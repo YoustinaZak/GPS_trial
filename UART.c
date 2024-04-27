@@ -82,9 +82,9 @@ void UART5_INIT(){              //PE4 = rx
 }
 
 
-char GetChar_PC(){
-	while((UART0_FR_R & (1<<4))!=0){} //loop if receive holding reg is empty (y3ny estna l7d ma ygelk 7aga tst2blha)
-		return UART0_DR_R; 
+void GetChar_PC(uint8_t x){
+	while((UART0_FR_R & (1<<5))!=0){} //loop if receive holding reg is empty (y3ny estna l7d ma ygelk 7aga tst2blha)
+	 UART0_DR_R =x; 
 }
 
 char GetChar_GPS(){

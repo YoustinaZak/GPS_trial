@@ -81,7 +81,7 @@ void PORTA_UART_INIT();
 void PORTD_UART_INIT();
 void UART2_Init();
 void UART5_INIT();
-char GetChar_PC();
+void GetChar_PC(uint8_t x);
 char readChar();
 char printChar();
 void transChar();
